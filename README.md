@@ -41,7 +41,7 @@ This script is **not** a standalone hardware bypass tool — it is an **automati
 
 ---
 
-## 🧪 Stand ALone Execution Examples
+## 🧪 Standalone Win11-UDT.ps1 Execution Examples
 
 ```powershell
 # Basic upgrade using ISO from secure storage
