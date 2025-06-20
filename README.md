@@ -9,7 +9,7 @@ Please see: https://github.com/AveYo/MediaCreationTool.bat for creating a Window
 
 ## 📌 Overview
 
-`Win11UDT.ps1` is a comprehensive and customizable PowerShell script built to streamline in-place upgrades from Windows 10 to Windows 11 across managed endpoints. Designed with IT admins, MSPs, and deployment engineers in mind, it supports both compliant and non-compliant hardware configurations and can be executed locally or remotely (e.g., via RMM or automation platforms).
+`Win11-UDT.ps1` is a comprehensive and customizable PowerShell script built to streamline in-place upgrades from Windows 10 to Windows 11 across managed endpoints. Designed with IT admins, MSPs, and deployment engineers in mind, it supports both compliant and non-compliant hardware configurations and can be executed locally or remotely (e.g., via RMM or automation platforms).
 
 This script is **not** a standalone hardware bypass tool — it is an **automation-first** upgrade solution with support for ISO validation, BitLocker handling, and upgrade logging.
 
