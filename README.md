@@ -96,7 +96,7 @@ This script is part of the broader **Windows 11 Deployment Toolkit**, which incl
 - 🔹 RMM wrapper script for executing remotely via systems like Datto.
 - 🔹 Ansible Playbook for bulk Linux-based provisioning and execution.
 - 🔹 PowerShell HTTP Server utility for hosting images locally on your network.
-- 🔹 Windows 11 Hardware Compatability Check Script with integrated update remediation for OS builds under 19041
+- 🔹 Windows 10 to 11 hardware compatability checking with integrated Win 10 update remeidation.
 
 ---
 
