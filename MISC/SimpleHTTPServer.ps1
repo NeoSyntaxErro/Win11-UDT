@@ -4,6 +4,9 @@
 # Note: Script hosts the current directory from which the script is executed as a browsable web-page accessible to endpoints
 #       on the local area network.
 
+# Run directly from your terminal with:
+# Set-ExecutionPolicy Bypass -Scope CurrentUser -Force; iex (irm 'https://raw.githubusercontent.com/neosyntaxerro/Win11-UDT/main/MISC/SimpleHTTPServer.ps1')
+
 param (
     [int]$Port = 8080
 )
