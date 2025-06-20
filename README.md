@@ -41,7 +41,7 @@ This script is **not** a standalone hardware bypass tool — it is an **automati
 
 ---
 
-## 🧪 Examples
+## 🧪 Stand ALone Execution Examples
 
 ```powershell
 # Basic upgrade using ISO from secure storage
