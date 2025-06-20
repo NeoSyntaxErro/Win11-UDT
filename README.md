@@ -1,4 +1,4 @@
-# Windows 11 Upgrade Deployment Toolkit (Win11UDT.ps1)
+# Windows 11 Upgrade Deployment Toolkit 
 
 Automated PowerShell-based deployment solution for upgrading Windows 10 systems to Windows 11 — with optional hardware check bypass for unsupported devices.  Hardware bpyass enabling requires a custom Windows 11 23H2 iso file.
 Some 24H2+ iso images will accept bypasses if the harware checks failures are within a certain tolerance threshold; Otherwise, a 23H2 iso is recommended.
