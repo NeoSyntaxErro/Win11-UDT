@@ -92,10 +92,11 @@ This includes every major step: disk check, registry modification, ISO verificat
 
 This script is part of the broader **Windows 11 Deployment Toolkit**, which includes:
 
-- 🔹 `Win11UDT.ps1` – This standalone upgrade tool.
+- 🔹 `Win11-UDT.ps1` – This standalone upgrade tool.
 - 🔹 RMM wrapper script for executing remotely via systems like Datto.
 - 🔹 Ansible Playbook for bulk Linux-based provisioning and execution.
 - 🔹 PowerShell HTTP Server utility for hosting images locally on your network.
+- 🔹 Windows 11 Hardware Compatability Check Script with integrated update remediation for OS builds under 19041
 
 ---
 
