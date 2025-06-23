@@ -43,7 +43,7 @@
 
 .NOTES
     Author: Steffen Teall
-    Version: 1.1
+    Version: 1.0
     Date: 2025-06-19
     Last Updated: 2025-06-19 0420 PST
     License: MIT
