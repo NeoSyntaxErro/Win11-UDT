@@ -64,7 +64,7 @@ try {
         Write-Host "TPM 2.0 Check Result: FAILED" -ForegroundColor White -BackgroundColor Red
     }
 } catch {
-    Write-Host "ERROR Grabbing TPM Compatability" -ForegroundColor White -BackgroundColor Red
+    Write-Host "ERROR Grabbing TPM Compatability.  TPM UNVERIFIED." -ForegroundColor White -BackgroundColor Red
 }
 Write-Output "===========================================================`n"
 
