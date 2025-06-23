@@ -39,14 +39,14 @@ Write-Output "===========================================================`n"
 Write-Output "`t`tRAM COMPATABILITY CHECK"
 Write-Output "==========================================================="
 $ramGB = [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 2)
+Write-Output "Total RAM: $ramGB GB"
 if ($ramGB -ge 4) {
     Write-Host "RAM Resource Check Result: PASSED" -ForegroundColor Black -BackgroundColor Green
 } else {
     Write-Host "RAM Resource Check Result: FAILED" -ForegroundColor White -BackgroundColor Red
 }
-Write-Output "==========================================================="
-Write-Output "Total RAM: $ramGB GB"
-Write-Output "==========================================================="
+Write-Output "===========================================================`n"
+
 
 ####    T P M    2 . 0    C H E C K    ####
 
