@@ -21,7 +21,7 @@ $cpuCheck       = Get-WmiObject Win32_Processor | Where-Object { $_.NumberOfCore
 $coreCount      = [int]$cpuCheck.NumberOfCores
 $processorSpeed = [math]::Round($cpuCheck.MaxClockSpeed / 1000, 1) 
 
-Write-Output "CPU COMPATABILITY CHECK" 
+Write-Output "`n`nCPU COMPATABILITY CHECK" 
 Write-Output "==========================================================="
 Write-Output "CPU Core Count     : $([string]$coreCount) Physical Cores"
 Write-Output "CPU Processor Speed: $([string]$processorSpeed) GHZ"
