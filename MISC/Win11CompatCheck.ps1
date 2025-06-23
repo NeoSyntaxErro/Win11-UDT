@@ -48,7 +48,10 @@ if ($ramGB -ge 4) {
 }
 Write-Output "===========================================================`n"
 
+# 3.
+####    A V A I L A B L E    S T O R A G E    C H E C K    ####
 
+# 4.
 ####    T P M    2 . 0    C H E C K    ####
 
 $tpm = Get-WmiObject -Namespace "Root\CIMv2\Security\MicrosoftTpm" -Class Win32_Tpm
@@ -61,6 +64,7 @@ if ([int]$tpm.SpecVersion.split(',')[0] -eq 2.0) {
 }
 Write-Output "===========================================================`n"
 
+# 5. 
 ####    S E C U R E    B O O T    C H E C K    ####
 
 Write-Output "SECURE BOOT ENABLED / COMPATIBLE CHECK"
@@ -73,6 +77,7 @@ if ($secureBoot) {
 }
 Write-Output "===========================================================`n"
 
+# 6. 
 ####    U E F I    C H E C K    ####
 
 Write-Output "UEFI CHECK"
@@ -85,6 +90,7 @@ if ($bcdOut -match "path.*EFI") {
 }
 Write-Output "===========================================================`n"
 
+# 7.
 ####    O S    B U I L D    V E R I F I C A T I O N    ####
 
 $osBuild  = (Get-CimInstance Win32_OperatingSystem).BuildNumber
