@@ -21,7 +21,7 @@ $cpuCheck       = Get-WmiObject Win32_Processor | Where-Object { $_.NumberOfCore
 $coreCount      = [int]$cpuCheck.NumberOfCores
 $processorSpeed = [math]::Round($cpuCheck.MaxClockSpeed / 1000, 1) 
 
-Write-Output "`t`tCPU COMPATABILITY CHECK" 
+Write-Output "CPU COMPATABILITY CHECK" 
 Write-Output "==========================================================="
 Write-Output "CPU Core Count     : $([string]$coreCount) Physical Cores"
 Write-Output "CPU Processor Speed: $([string]$processorSpeed) GHZ"
@@ -36,10 +36,11 @@ Write-Output "===========================================================`n"
 #2.
 ####    R A M    R E S O U R C E    C H E C K    ####
 
-Write-Output "`t`tRAM COMPATABILITY CHECK"
+Write-Output "RAM COMPATABILITY CHECK"
 Write-Output "==========================================================="
 $ramGB = [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 2)
 Write-Output "Total RAM: $ramGB GB"
+Write-Output "==========================================================="
 if ($ramGB -ge 4) {
     Write-Host "RAM Resource Check Result: PASSED" -ForegroundColor Black -BackgroundColor Green
 } else {
@@ -51,7 +52,7 @@ Write-Output "===========================================================`n"
 ####    T P M    2 . 0    C H E C K    ####
 
 $tpm = Get-WmiObject -Namespace "Root\CIMv2\Security\MicrosoftTpm" -Class Win32_Tpm
-Write-Output "`t`tTPM 2.0 COMPATABILITY CHECK"
+Write-Output "TPM 2.0 COMPATABILITY CHECK"
 Write-Output "==========================================================="
 if ([int]$tpm.SpecVersion.split(',')[0] -eq 2.0) {
     Write-Host "TPM 2.0 Result: PASSED" -ForegroundColor Black -BackgroundColor Green
@@ -62,7 +63,7 @@ Write-Output "===========================================================`n"
 
 ####    S E C U R E    B O O T    C H E C K    ####
 
-Write-Output "`t`tSECURE BOOT ENABLED / COMPATIBLE CHECK"
+Write-Output "SECURE BOOT ENABLED / COMPATIBLE CHECK"
 Write-Output "==========================================================="
 $secureBoot = Confirm-SecureBootUEFI
 if ($secureBoot) {
@@ -74,7 +75,7 @@ Write-Output "===========================================================`n"
 
 ####    U E F I    C H E C K    ####
 
-Write-Output "`t`tUEFI CHECK"
+Write-Output "UEFI CHECK"
 Write-Output "==========================================================="
 $bcdOut = bcdedit | Out-String
 if ($bcdOut -match "path.*EFI") {
@@ -87,7 +88,7 @@ Write-Output "===========================================================`n"
 ####    O S    B U I L D    V E R I F I C A T I O N    ####
 
 $osBuild  = (Get-CimInstance Win32_OperatingSystem).BuildNumber
-Write-Output "`t`tOS BUILD VERIFICATION"
+Write-Output "OS BUILD VERIFICATION"
 Write-Output "==========================================================="
 if ([int]$osBuild -ge 19041) {
     Write-Host "OS BUILD CHECK: PASSED" -ForegroundColor Black -BackgroundColor Green
