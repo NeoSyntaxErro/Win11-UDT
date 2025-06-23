@@ -54,13 +54,17 @@ Write-Output "===========================================================`n"
 # 4.
 ####    T P M    2 . 0    C H E C K    ####
 
-$tpm = Get-WmiObject -Namespace "Root\CIMv2\Security\MicrosoftTpm" -Class Win32_Tpm
-Write-Host "TPM 2.0 COMPATABILITY CHECK" -ForegroundColor Cyan
-Write-Output "==========================================================="
-if ([int]$tpm.SpecVersion.split(',')[0] -eq 2.0) {
-    Write-Host "TPM 2.0 Result: PASSED" -ForegroundColor Black -BackgroundColor Green
-} else {
-    Write-Host "TPM 2.0 Check Result: FAILED" -ForegroundColor White -BackgroundColor Red
+try { 
+    $tpm = Get-WmiObject -Namespace "Root\CIMv2\Security\MicrosoftTpm" -Class Win32_Tpm
+    Write-Host "TPM 2.0 COMPATABILITY CHECK" -ForegroundColor Cyan
+    Write-Output "==========================================================="
+    if ([int]$tpm.SpecVersion.split(',')[0] -eq 2.0) {
+        Write-Host "TPM 2.0 Result: PASSED" -ForegroundColor Black -BackgroundColor Green
+    } else {
+        Write-Host "TPM 2.0 Check Result: FAILED" -ForegroundColor White -BackgroundColor Red
+    }
+} catch {
+    Write-Host "ERROR Grabbing TPM Compatability" -ForegroundColor White -BackgroundColor Red
 }
 Write-Output "===========================================================`n"
 
