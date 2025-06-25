@@ -281,7 +281,8 @@ if ($SkipBypassRegistryEdits -eq $false) {
     'reg add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig\ /v BypassRAMCheck /t REG_DWORD /d 1 /f',
     'reg add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig\ /v BypassSecureBootCheck /t REG_DWORD /d 1 /f',
     'reg add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig\ /v BypassCPUCheck /t REG_DWORD /d 1 /f',
-    'reg add HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup\ /v AllowUpgradesWithUnsupportedTPMOrCPU /t REG_DWORD /d 1 /f'
+    'reg add HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup\ /v AllowUpgradesWithUnsupportedTPMOrCPU /t REG_DWORD /d 1 /f',
+    'reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v Enabled /t REG_DWORD /d 0 /f'    # Disable HVCI pre-upgrade.
     )
 
     foreach ($cmd in $regCommands) {
@@ -330,8 +331,8 @@ if (-not($?)) {
 
 log "[*]::Attn::Changing Directories to mount point / Executing Upgrade."
 Set-Location $driveLetter
-# Consider adding paramater to make the command execution modifiable. { upgrade | clean }
-./setup.exe /auto upgrade /migratedrivers all /resizerecoverypartition enable /dynamicupdate disable /eula accept /quiet /uninstall disable /compat ignorewarning /copylogs C:\Install\WinSetup.log
+# Consider adding paramater to make the command execution modifiable. { upgrade | clean } { migrate drives: none } | Make a damn variable.
+./setup.exe /auto upgrade /migratedrivers none /resizerecoverypartition enable /dynamicupdate disable /eula accept /quiet /uninstall disable /compat ignorewarning /copylogs C:\Install\WinSetup.log
 if ($?) {
     if ($remDeploy -eq 1) {
         Toast-Notify "OS Version Upgrade is modifying critical system files and will reboot without further notification. ETA: 1 Hour."
