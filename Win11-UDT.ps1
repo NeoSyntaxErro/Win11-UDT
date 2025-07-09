@@ -336,6 +336,10 @@ Set-Location $driveLetter
 # Modified the launch call to help combat unecessary rollback options.
 ./setup.exe /auto upgrade /migratedrivers none /resizerecoverypartition enable /dynamicupdate enable /eula accept /quiet /uninstall disable /copylogs C:\Install\WinSetup.log
 
+# Modified as I think dynamic update is breaking this for some endpoints.  May need ot update the /noreboot switch.  I want it to reboot.
+# ./setup.exe /auto upgrade /quiet /dynamicupdate disable /eula accept /compat ignorewarning /noreboot 
+
+
 if ($?) {
     if ($remDeploy -eq 1) {
         Toast-Notify "OS Version Upgrade is modifying critical system files and will reboot without further notification. ETA: 1 Hour."
