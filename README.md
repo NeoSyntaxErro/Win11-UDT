@@ -52,6 +52,10 @@ This script is **not** a standalone hardware bypass tool — it is an **automati
 
 # With ISO hash verification
 .\Win11UDT.ps1 -isoUrl "https://cdn.server.com/win11.iso" -VerifyFileHash $true -FileHashValue "ABCDEF1234567890..." -remDeploy 1
+
+# Pull Directly from Repo and Execute with custom ISO url.
+param([string]$isoUrl = "https://your-default-iso-url.com/win11.iso")
+Set-ExecutionPolicy Bypass -Scope CurrentUser -Force; iex (irm 'https://raw.githubusercontent.com/NeoSyntaxErro/Win11-UDT/main/MISC/Win11CompatCheck.ps1') -isoUrl $isoUrl
 ```
 
 ## 🧪 Standalone Windows 11 Upgrade Compatability Check Execution Example.
