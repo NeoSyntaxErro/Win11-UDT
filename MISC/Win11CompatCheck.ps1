@@ -128,8 +128,8 @@ Write-Output "==========================================================="
 if ([int]$osBuild -ge 19041) {
     Write-Host "OS BUILD CHECK: PASSED" -ForegroundColor Black -BackgroundColor Green
     Write-Output "===========================================================`n"
-    Write-Output "Exiting..."
-    Start-Sleep 3
+    Write-Output "Finished!"
+    pause
     exit 0
 } else {
     Write-Host "OS BUILD CHECK: FAILED" -ForegroundColor White -BackgroundColor Red 
