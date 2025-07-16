@@ -656,7 +656,7 @@ EXIT
    cmd /d /x /c "pushd c:\ & rmdir /s /q ""$DIR"" >nul 2>nul & del /f /q ""$WS\*.*"" >nul 2>nul"
  }
 
- write-host -fore Green "`r`n DONE "; write-host Press any key to exit . . .; sleep 7; return 
+ write-host -fore Green "`r`n DONE "; return 
 #:: done #:Assisted_MCT
 
 ::--------------------------------------------------------------------------------------------------------------------------------
