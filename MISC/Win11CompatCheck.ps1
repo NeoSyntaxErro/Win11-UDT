@@ -151,7 +151,7 @@ if ([int]$osBuild -ge 19041) {
     Write-Output "==========================================================="
     
     if (-not(Test-Path "C:\temp")) {
-        New-Item -ItemPath "C:\temp" -ItemType Directory
+        New-Item -Path "C:\temp" -ItemType Directory
     }
     
     Write-Output "Downloading: Windows 11 Update Assistant..."
