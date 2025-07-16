@@ -334,10 +334,10 @@ Set-Location $driveLetter
 # Consider adding paramater to make the command execution modifiable. { upgrade | clean } { migrate drives: none } | Make a damn variable.
 #./setup.exe /auto upgrade /migratedrivers none /resizerecoverypartition enable /dynamicupdate disable /eula accept /quiet /uninstall disable /compat ignorewarning /copylogs C:\Install\WinSetup.log
 # Modified the launch call to help combat unecessary rollback options.
-./setup.exe /auto upgrade /migratedrivers none /resizerecoverypartition enable /dynamicupdate enable /eula accept /quiet /uninstall disable /copylogs C:\Install\WinSetup.log
+#./setup.exe /auto upgrade /migratedrivers none /resizerecoverypartition enable /dynamicupdate enable /eula accept /quiet /uninstall disable /copylogs C:\Install\WinSetup.log
 
 # Modified as I think dynamic update is breaking this for some endpoints.  May need ot update the /noreboot switch.  I want it to reboot.
-# ./setup.exe /auto upgrade /quiet /dynamicupdate disable /eula accept /compat ignorewarning /noreboot 
+./setup.exe /auto upgrade /quiet /dynamicupdate disable /eula accept /compat ignorewarning /noreboot 
 
 
 if ($?) {
