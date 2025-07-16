@@ -14,6 +14,19 @@
 #
 # Actual URL Ref: https://github.com/NeoSyntaxErro/Win11-UDT/blob/main/MISC/Win11CompatCheck.ps1
 
+param (
+  [Parameter(Mandatory = $false)]
+  [object]$AutoUpdate
+)
+
+# Set Default value if not provided, convert to string if object input provided (RMM)
+if ($null -eq $AutoUpgrade) {
+  $AutoUpdate = $false
+}
+elseif ($AutoUpdate -is [string]) {
+  $AutoUpdate = [bool]::Parse($AutoUpdate)
+}
+
 $banner = @'
               ,---------------------------,
               |  /---------------------\  |
