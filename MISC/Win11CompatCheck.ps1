@@ -162,7 +162,7 @@ if ([int]$osBuild -ge 19041) {
         Start-Process -FilePath "C:\temp\Windows10Update.exe" -ArgumentList "/quietinstall /skipeula /auto upgrade /warnrestart[:30]"    # Do I add logging with '-RedirectStandardOutput "C:\temp\Win10Update.log"
         if ($?) {
             Write-Host "Windows 10 Update Assistant Successfully Launched." -ForegroundColor Black -BackgroundColor Green
-            Write-Output "Workstation will reboot 30 seconds after updates have finished."
+            Write-Output "Workstation will reboot 30 minutes after updates have finished."
             Start-Sleep 3
             exit 0
         } else {
