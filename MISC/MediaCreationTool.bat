@@ -1,5 +1,5 @@
 @goto latest at github.com/AveYo/MediaCreationTool.bat
-:: Universal MCT wrapper script for all Windows 10/11 versions from 1507 to 23H2!
+:Universal MCT wrapper script for all Windows 10/11 versions from 1507 to 23H2!
 :: Nothing but Microsoft-hosted source links and no third-party tools; script just configures an xml and starts MCT
 :: Ingenious support for business editions (Enterprise / VL) selecting language, x86, x64 or AiO inside the MCT GUI
 :: Changelog: 2023.11.29 stable
@@ -656,7 +656,7 @@ EXIT
    cmd /d /x /c "pushd c:\ & rmdir /s /q ""$DIR"" >nul 2>nul & del /f /q ""$WS\*.*"" >nul 2>nul"
  }
 
- write-host -fore Green "`r`n DONE "; return 
+ write-host -fore Green "`r`n DONE "; write-host Press any key to exit . . .; sleep 7; return 
 #:: done #:Assisted_MCT
 
 ::--------------------------------------------------------------------------------------------------------------------------------
