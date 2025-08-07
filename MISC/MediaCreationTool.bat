@@ -430,7 +430,7 @@ dism /cleanup-wim >nul 2>nul
 
 ::# start script-assisted MCT via powershell (to monitor setup state and take necessary action)
 set "0=%~f0" & powershell -nop -c "iex ([io.file]::ReadAllText($env:0) -split '[:]Assisted_MCT')[1];"
-::# if not defined DEF if %hide% neq 1 pause >nul
+if not defined DEF if %hide% neq 1 pause >nul
 
 EXIT
 
