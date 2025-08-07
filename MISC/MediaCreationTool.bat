@@ -381,7 +381,7 @@ if exist products%VID%.cab expand.exe -R products%VID%.cab -F:* . >nul 2>nul
 set "/hint=Check urls in browser | del ESD dir | use powershell v3.0+ | unblock powershell | enable BITS serv"
 echo;& set err=& for %%s in (products.xml MediaCreationTool%VID%.exe) do if not exist %%s set err=1
 if defined err (%<%:4f " ERROR "%>>% & %<%:0f " %/hint% "%>%) else if not defined err %<%:0f " %PRESET% "%>%
-if defined err (del /f /q products%VID%.* MediaCreationTool%VID%.exe 2>nul & pause & exit /b1)
+if defined err (del /f /q products%VID%.* MediaCreationTool%VID%.exe 2>nul & exit /b1)
 
 ::# configure products.xml in one go via powershell snippet - most of the MCT fixes happen there
 call :PRODUCTS_XML
@@ -430,7 +430,7 @@ dism /cleanup-wim >nul 2>nul
 
 ::# start script-assisted MCT via powershell (to monitor setup state and take necessary action)
 set "0=%~f0" & powershell -nop -c "iex ([io.file]::ReadAllText($env:0) -split '[:]Assisted_MCT')[1];"
-:: if not defined DEF if %hide% neq 1 pause >nul
+::# if not defined DEF if %hide% neq 1 pause >nul
 
 EXIT
 
@@ -656,7 +656,7 @@ EXIT
    cmd /d /x /c "pushd c:\ & rmdir /s /q ""$DIR"" >nul 2>nul & del /f /q ""$WS\*.*"" >nul 2>nul"
  }
 
- write-host -fore Green "`r`n DONE "; sleep 2; exit 
+ write-host -fore Green "`r`n DONE "
 #:: done #:Assisted_MCT
 
 ::--------------------------------------------------------------------------------------------------------------------------------
